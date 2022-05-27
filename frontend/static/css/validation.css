@@ -1,0 +1,23 @@
+label.error{
+    color: red;
+    font-weight: bold;
+}
+input.error{
+    border: 1px solid red;
+}
+#apellidos-error {
+    color: red;
+    font-weight: bold;
+}
+#nombres-error {    
+    color: red;
+    font-weight: bold;
+}
+#banco-error{
+    color: red;
+    font-weight: bold;
+}
+#cuenta-error{
+    color: red;
+    font-weight: bold;
+}

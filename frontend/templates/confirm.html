@@ -1,0 +1,267 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Fashi Template">
+    <meta name="keywords" content="Fashi, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Perry Pet</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+
+
+    <!-- Header Section Begin -->
+    <img src="img/dark-mode/moon.png" id="icon-dark-mode">
+    <header class="header-section">
+        <div class="header-top">
+            <div class="container">
+                <div class="ht-left">
+                    <div class="mail-service">
+                        <i class=" fa fa-envelope"></i>
+                        perrypet@gmail.com
+                    </div>
+                    <div class="phone-service">
+                        <i class=" fa fa-phone"></i>
+                        +569 8433 1626
+                    </div>
+                </div>
+                <div class="ht-right">
+                    <a href="login-signin.html" class="login-panel"><i class="fa fa-user"></i>Login</a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="inner-header">
+                <div class="row">
+                    <!--Logo-->
+                    <div class="col-lg-2 col-md-2">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="img/espurr.jpg" style="width: 50%;height: 50%;" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <!--Buscador-->
+                    <div class="col-lg-7 col-md-7">
+                        <div class="advanced-search">       <!--Buscar como mover el símbolo de búsqueda-->
+                            <!-- <button type="button" class="category-btn">All Categories</button>-->
+                            <div class="input-group ">
+                                <input type="text" placeholder="Qué buscas?">
+                                <button type="button"><i class="ti-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Carrito-->
+                    <div class="col-lg-3 text-right col-md-3">
+                        <ul class="nav-right">
+                            <li class="heart-icon">
+                                <a href="#">
+                                    <i class="icon_heart_alt"></i>
+                                    <span><!--Aquí deben ir la cantidad de lista de deseo--></span>
+                                </a>
+                            </li>
+                            <li class="cart-icon">
+                                <a href="#">
+                                    <i class="icon_bag_alt"></i>
+                                    <span><!--Aquí deben ir la cantidad del carrito--></span>
+                                </a>
+                                <div class="cart-hover">
+                                    <div class="select-items">
+                                        <table>
+                                          <!--aquí se insertan los productos-->  
+                                        </table>
+                                    </div>
+                                    <div class="select-total">
+                                        <span>total:</span>
+                                        <h5>$0.00</h5>
+                                    </div>
+                                    <div class="select-button">
+                                        <a href="shopping-cart.html" class="primary-btn view-card">CARRITO</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="cart-price">$0.00</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-item">
+            <div class="container">
+                <nav class="nav-menu mobile-menu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="javascript:void(0)">Productos</a>
+                            <ul class="dropdown">
+                                <li><a href="bandanas.html">Bandanas</a></li>
+                                <li><a href="correas.html">Correas</a></li>
+                                <li><a href="identificadores.html">Identificadores</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="acerca_de.html">Acerca de</a></li>
+                        <li><a href="subscripcion.html">Donar</a></li>
+                        
+                    </ul>
+                </nav>
+                <div id="mobile-menu-wrap"></div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Register Section Begin -->
+    <div class="register-login-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="login-form">
+                        <h2>COMPRA REALIZADA!</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="login-form2">
+                <h2>Detalle</h2>
+            </div>
+            <table class="table table-bordered table-striped light-mode">
+                <thead>
+                    <tr>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Identificador para Mascota</td>
+                        <td>$10.000</td>
+                        <td>1</td>
+                        <td>$10.000</td>
+                    </tr>
+                    <tr>
+                        <td>Bandana Collar</td>
+                        <td>$2.000</td>
+                        <td>1</td>
+                        <td>$2.000</td>
+                    </tr>
+                    <tr>
+                        <td>Arnes con Correa para mascota</td>
+                        <td>$9.000</td>
+                        <td>1</td>
+                        <td>$9.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <h3>Enviado a "Direccion"</h3><br>
+        <a href="perfil_usuario.html" class="btn btn-dark btn-lg">SEGUIMIENTO</a><br><br><br><br><br>
+    </div>
+    <!-- Register Form Section End -->
+
+    <!-- Partner Logo Section Begin -->
+    <!-- ELIMINADO BY CRIS-->
+    <!-- Partner Logo Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer-left">
+                        <div class="footer-logo">
+                            <a href="index.html"><img src="img/espurr.jpg" style="width: 50%;height: 50%;" alt=""></a>
+                        </div>
+                        <ul>
+                            <li>Direccion: Av José Pedro Alessandri 1164, Loc. 3033</li>
+                            <li>Telefono: +569 8433 1626</li>
+                            <li>Email: perrypet@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1">
+                    <div class="footer-widget">
+                        <h5>Informacion</h5>
+                        <ul>
+                            <li><a href="acerca_de.html">Sobre Nosotros</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="footer-widget">
+                        <h5>Mi Cuenta</h5>
+                        <ul>
+                            <li><a href="perfil_usuario.html">Perfil</a></li>
+                            <li><a href="shopping-cart.html">Carrito</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="newslatter-item">
+                        <h5>Unete a nuestro boletin informativo</h5>
+                        <p>Recibe E-Mails sobre nuestra tienda y ofertas especiales!</p>
+                        <form action="#" class="subscribe-form">
+                            <input type="text" placeholder="Ingresa tu E-Mail">
+                            <button type="button">Suscribirse</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-reserved">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright-text">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </div>
+                        <div class="payment-pic">
+                            <img src="img/payment-method.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.zoom.min.js"></script>
+    <script src="js/jquery.dd.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/darkmode.js"></script>
+    </body>
+
+</html>
