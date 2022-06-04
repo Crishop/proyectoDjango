@@ -47,8 +47,8 @@
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="login-signin.html" class="login-panel"><i class="fa fa-user"></i>Login</a>
-                    
+                    <a href="/login" class="login-panel"><i class="fa fa-user"></i>Login</a>
+
                 </div>
             </div>
         </div>
@@ -58,14 +58,15 @@
                     <!--Logo-->
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="/">
                                 <img src="{% static 'img/espurr.jpg'%}" style="width: 50%;height: 50%;" alt="">
                             </a>
                         </div>
                     </div>
                     <!--Buscador-->
                     <div class="col-lg-7 col-md-7">
-                        <div class="advanced-search">       <!--Buscar como mover el símbolo de búsqueda-->
+                        <div class="advanced-search">
+                            <!--Buscar como mover el símbolo de búsqueda-->
                             <!-- <button type="button" class="category-btn">All Categories</button>-->
                             <div class="input-group ">
                                 <input type="text" placeholder="Qué buscas?">
@@ -79,18 +80,22 @@
                             <li class="heart-icon">
                                 <a href="#">
                                     <i class="icon_heart_alt"></i>
-                                    <span><!--Aquí deben ir la cantidad de lista de deseo--></span>
+                                    <span>
+                                        <!--Aquí deben ir la cantidad de lista de deseo-->
+                                    </span>
                                 </a>
                             </li>
                             <li class="cart-icon">
                                 <a href="#">
                                     <i class="icon_bag_alt"></i>
-                                    <span><!--Aquí deben ir la cantidad del carrito--></span>
+                                    <span>
+                                        <!--Aquí deben ir la cantidad del carrito-->
+                                    </span>
                                 </a>
                                 <div class="cart-hover">
                                     <div class="select-items">
                                         <table>
-                                          <!--aquí se insertan los productos-->  
+                                            <!--aquí se insertan los productos-->
                                         </table>
                                     </div>
                                     <div class="select-total">
@@ -98,7 +103,7 @@
                                         <h5>$0.00</h5>
                                     </div>
                                     <div class="select-button">
-                                        <a href="shopping-cart.html" class="primary-btn view-card">CARRITO</a>
+                                        <a href="/carro" class="primary-btn view-card">CARRITO</a>
                                     </div>
                                 </div>
                             </li>
@@ -112,17 +117,17 @@
             <div class="container">
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="javascript:void(0)">Productos</a>
                             <ul class="dropdown">
-                                <li class="active"><a href="javascript:void(0)">Bandanas</a></li>
-                                <li><a href="correas.html">Correas</a></li>
-                                <li><a href="identificadores.html">Identificadores</a></li>
+                                <li><a href="/bandanas">Bandanas</a></li>
+                                <li><a href="/correas">Correas</a></li>
+                                <li><a href="/identificadores">Identificadores</a></li>
                             </ul>
                         </li>
-                        <li><a href="acerca_de.html">Acerca de</a></li>
-                        <li><a href="subscripcion.html">Donar</a></li>
-                        
+                        <li><a href="/about">Acerca de</a></li>
+                        <li><a href="/donar">Donar</a></li>
+
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
@@ -515,7 +520,7 @@
                 <div class="col-lg-3">
                     <div class="footer-left">
                         <div class="footer-logo">
-                            <a href="index.html"><img src="{% static 'img/espurr.jpg'%}" style="width: 50%;height: 50%;" alt=""></a>
+                            <a href="/"><img src="{% static 'img/espurr.jpg'%}" style="width: 50%;height: 50%;" alt=""></a>
                         </div>
                         <ul>
                             <li>Direccion: Av José Pedro Alessandri 1164, Loc. 3033</li>
@@ -528,7 +533,7 @@
                     <div class="footer-widget">
                         <h5>Informacion</h5>
                         <ul>
-                            <li><a href="acerca_de.html">Sobre Nosotros</a></li>
+                            <li><a href="/about">Sobre Nosotros</a></li>
                         </ul>
                     </div>
                 </div>
@@ -536,8 +541,8 @@
                     <div class="footer-widget">
                         <h5>Mi Cuenta</h5>
                         <ul>
-                            <li><a href="perfil_usuario.html">Perfil</a></li>
-                            <li><a href="shopping-cart.html">Carrito</a></li>
+                            <li><a href="/perfil">Perfil</a></li>
+                            <li><a href="/carro">Carrito</a></li>
                         </ul>
                     </div>
                 </div>
@@ -559,8 +564,11 @@
                     <div class="col-lg-12">
                         <div class="copyright-text">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
+                            template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                                href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </div>
                         <div class="payment-pic">
                             <img src="{% static 'img/payment-method.png'%}" alt="">
