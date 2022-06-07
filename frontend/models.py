@@ -19,11 +19,26 @@ class Producto(models.Model):
     def __str__(self):
         return (self.nombreProducto)
 
-producto=models.ForeignKey(Producto, on_delete=models.CASCADE, related_name='productos')
-def __str__(self):
-    return (self.nombreCarrito)
-
-class Checkout(models.Model):
+class Carrito(models.Model):
+    idCarrito=models.IntegerField(primary_key=True, verbose_name="ID Carrito")
     producto=models.ForeignKey(Producto, on_delete=models.CASCADE, related_name='productos')
     def __str__(self):
-        return (self.nombreCarrito)
+        return (self.producto)
+
+class Cliente(models.model):
+    idCliente=models.IntegerField(primary_key=True, verbose_name="ID Cliente")
+    nombreCliente=models.CharField(max_length=30, verbose_name="Nombre Cliente")
+    apellidoCliente=models.CharField(max_length=30, verbose_name="Apellido Cliente")
+    correoCliente=models.CharField(max_length=420, verbose_name="Correo Cliente")
+    direccionCliente=models.CharField(max_length=420, verbose_name="Dirección Cliente")
+    def __str__(self):
+        return (self.nombreCliente)
+
+class Checkout(models.Model):
+    carrito=models.ForeignKey(Carrito, on_delete=models.CASCADE, related_name='carrito')
+    producto=models.ForeignKey(Producto, on_delete=models.CASCADE, related_name='productos')
+    cliente=models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name='cliente')
+    def __str__(self):
+        return (self.producto)
+
+
