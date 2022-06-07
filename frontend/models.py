@@ -12,7 +12,7 @@ class categoria(models.Model):
 class Producto(models.Model):
     idProducto = models.IntegerField(primary_key=True, verbose_name="ID Producto")
     nombreProducto=models.CharField(max_length=30, verbose_name="Nombre Producto")
-    imagen=models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, verbose_name="Imagen Producto")
+    imagen=models.CharField(max_length=256)
     precio=models.IntegerField(verbose_name="Precio Producto")
     stock=models.IntegerField(verbose_name="Stock Producto")
     categoria=models.ForeignKey(categoria, on_delete=models.CASCADE, related_name='productos')
@@ -21,11 +21,11 @@ class Producto(models.Model):
 
 class Carrito(models.Model):
     idCarrito=models.IntegerField(primary_key=True, verbose_name="ID Carrito")
-    producto=models.ForeignKey(Producto, on_delete=models.CASCADE, related_name='productos')
+    producto=models.ForeignKey(Producto, on_delete=models.CASCADE, related_name='c_productos')
     def __str__(self):
         return (self.producto)
 
-class Cliente(models.model):
+class Cliente(models.Model):
     idCliente=models.IntegerField(primary_key=True, verbose_name="ID Cliente")
     nombreCliente=models.CharField(max_length=30, verbose_name="Nombre Cliente")
     apellidoCliente=models.CharField(max_length=30, verbose_name="Apellido Cliente")
@@ -36,7 +36,7 @@ class Cliente(models.model):
 
 class Checkout(models.Model):
     carrito=models.ForeignKey(Carrito, on_delete=models.CASCADE, related_name='carrito')
-    producto=models.ForeignKey(Producto, on_delete=models.CASCADE, related_name='productos')
+    producto=models.ForeignKey(Producto, on_delete=models.CASCADE, related_name='ch_productos')
     cliente=models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name='cliente')
     def __str__(self):
         return (self.producto)
