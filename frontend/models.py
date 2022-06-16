@@ -42,3 +42,9 @@ class Checkout(models.Model):
         return (self.producto)
 
 
+class Usuario(models.Model):
+    email = models.EmailField(primary_key=True)
+    password = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.email
