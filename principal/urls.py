@@ -28,5 +28,6 @@ urlpatterns = [
     path('login/',login),
     path('perfil/',perfil),
     path('carro/',carro),
-    path('donar/',donar)
+    path('donar/',donar),
+    path('inventario',inventario)
 ]
