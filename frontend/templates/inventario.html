@@ -62,10 +62,10 @@
                 <th>Precio</th>
                 <th>Stock</th>
                 <th colspan="2">Acciones</th>
-                {% for p in productos%}
+                {% for p in productos %}
                 <tr>
                     <td>{{p.idProducto}}</td>
-                    <td>{{p.nombre}}</td>
+                    <td>{{p.nombreProducto}}</td>
                     <td>{{p.stock}}</td>
                     <td>{{p.precio}}</td>
                     <td><a href="eliminarProducto/{{p.idProducto}}">Eliminar</a></td>
