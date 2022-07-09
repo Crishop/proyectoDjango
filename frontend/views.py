@@ -1,11 +1,15 @@
 from django.shortcuts import render, redirect
 <<<<<<< HEAD
+<<<<<<< HEAD
 from urllib import response
 from django.http import HttpResponse
 from .models import Usuario
 =======
 from .models import *
 >>>>>>> 2f6b4c37de69e19b2f9d2c3f3db22fa8dbc8c572
+=======
+from .models import *
+>>>>>>> Juan
 
 # Create your views here.
 def inventario(request):
@@ -45,6 +49,7 @@ def donar(request):
     return render(request,'subscripcion.html')
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 def validarUsuario(request):
     v_email = request.POST.get('email')
     v_password = request.POST.get('password')
@@ -59,6 +64,8 @@ def validarUsuario(request):
     except:
         return redirect('/login/')
 =======
+=======
+>>>>>>> Juan
 def guardarProducto(request):
     
     v_idproducto=request.POST.get('idproducto')
@@ -102,4 +109,7 @@ def guardarProductoModificado(request):
 
         Producto.save(buscado)
         return redirect('/')
+<<<<<<< HEAD
 >>>>>>> 2f6b4c37de69e19b2f9d2c3f3db22fa8dbc8c572
+=======
+>>>>>>> Juan
