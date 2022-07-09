@@ -1,9 +1,16 @@
 from django.shortcuts import render, redirect
+<<<<<<< HEAD
 from urllib import response
 from django.http import HttpResponse
 from .models import Usuario
+=======
+from .models import *
+>>>>>>> 2f6b4c37de69e19b2f9d2c3f3db22fa8dbc8c572
 
 # Create your views here.
+def inventario(request):
+    return render(request,'inventario.html')
+
 def home(request):
     if 'usuario' not in request.session:
         return redirect('/login/')
@@ -37,6 +44,7 @@ def carro(request):
 def donar(request):
     return render(request,'subscripcion.html')
 
+<<<<<<< HEAD
 def validarUsuario(request):
     v_email = request.POST.get('email')
     v_password = request.POST.get('password')
@@ -50,3 +58,48 @@ def validarUsuario(request):
 
     except:
         return redirect('/login/')
+=======
+def guardarProducto(request):
+    
+    v_idproducto=request.POST.get('idproducto')
+    v_nomproducto=request.POST.get('nombre')
+    v_preproducto=request.POST.get('precio')
+    v_stockproducto=request.POST.get('stock')
+
+    nuevo=Producto()
+    nuevo.idProducto=v_idproducto
+    nuevo.nombre=v_nomproducto
+    nuevo.stock=v_stockproducto
+    nuevo.precio=v_preproducto
+
+    Producto.save(nuevo)
+
+    return redirect('/')
+    
+def eliminarProducto(request, p_idProducto):
+    buscado=Producto.objects.get(idProducto=p_idProducto)
+    if(buscado):
+        Producto.delete(buscado)
+        return redirect('/')
+
+def buscarProducto(request, p_idProducto):
+    buscado=Producto.objects.get(idProducto=p_idProducto)
+    datos={'producto': buscado}
+    return render(request, 'modificar.html', datos)
+
+def guardarProductoModificado(request):
+    v_idproducto=request.POST.get('idproducto')
+    v_nomproducto=request.POST.get('nombre')
+    v_preproducto=request.POST.get('precio')
+    v_stockproducto=request.POST.get('stock')
+
+    buscado=Producto.objects.get(idProducto=v_idproducto)
+
+    if(buscado):
+        buscado.nombre=v_nomproducto
+        buscado.stock=v_stockproducto
+        buscado.precio=v_preproducto
+
+        Producto.save(buscado)
+        return redirect('/')
+>>>>>>> 2f6b4c37de69e19b2f9d2c3f3db22fa8dbc8c572

@@ -29,5 +29,9 @@ urlpatterns = [
     path('perfil/',perfil),
     path('carro/',carro),
     path('donar/',donar),
+<<<<<<< HEAD
     path('validarUsuario/', validarUsuario),
+=======
+    path('inventario',inventario)
+>>>>>>> 2f6b4c37de69e19b2f9d2c3f3db22fa8dbc8c572
 ]

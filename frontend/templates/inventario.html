@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <h1>Ingreso de datos productos</h1>
+        </div>
+        <br>
+        
+        <div class="row">
+            <form method="post" action="guardarProducto/" id="formulario">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="idproducto">ID producto</label>
+                    <input type="number" id="idproducto" name="idproducto" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre producto</label>
+                    <input type="text" id="nombre" name="nombre" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio producto</label>
+                    <input type="number" id="precio" name="precio" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="stock">Stock producto</label>
+                    <input type="number" id="stock" name="stock" class="form-control">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" id="enviar" value="Enviar">
+                    <input type="reset" class="btn btn-secondary" id="limpiar" value="Limpiar">
+            </div>
+            </form>
+            
+        <br><br>
+        <div class="row">
+            <table class="table table-stripped">
+                <th>ID producto</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th colspan="2">Acciones</th>
+                {% for p in productos%}
+                <tr>
+                    <td>{{p.idProducto}}</td>
+                    <td>{{p.nombre}}</td>
+                    <td>{{p.stock}}</td>
+                    <td>{{p.precio}}</td>
+                    <td><a href="eliminarProducto/{{p.idProducto}}">Eliminar</a></td>
+                    <td><a href="modificarProducto/{{p.idProducto}}">Modificar</a></td>
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+
+    </div>
+
+
+
+    <!-- Js Plugins -->
+    <script src="{% static 'js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/jquery-ui.min.js'%}"></script>
+    <script src="{% static 'js/jquery.countdown.min.js'%}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js'%}"></script>
+    <script src="{% static 'js/jquery.zoom.min.js'%}"></script>
+    <script src="{% static 'js/jquery.dd.min.js'%}"></script>
+    <script src="{% static 'js/jquery.slicknav.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+    <script src="{% static 'js/darkmode.js'%}"></script>
+</body>
+</html>
