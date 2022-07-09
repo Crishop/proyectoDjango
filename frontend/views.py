@@ -1,19 +1,17 @@
 from django.shortcuts import render, redirect
-<<<<<<< HEAD
-<<<<<<< HEAD
 from urllib import response
 from django.http import HttpResponse
 from .models import Usuario
-=======
 from .models import *
->>>>>>> 2f6b4c37de69e19b2f9d2c3f3db22fa8dbc8c572
-=======
 from .models import *
->>>>>>> Juan
+
+
 
 # Create your views here.
 def inventario(request):
-    return render(request,'inventario.html')
+    v_productos=Producto.objects.all()
+    datos={'productos':v_productos}
+    return render(request,'inventario.html', datos)
 
 def home(request):
     if 'usuario' not in request.session:
@@ -48,8 +46,7 @@ def carro(request):
 def donar(request):
     return render(request,'subscripcion.html')
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 def validarUsuario(request):
     v_email = request.POST.get('email')
     v_password = request.POST.get('password')
@@ -63,9 +60,7 @@ def validarUsuario(request):
 
     except:
         return redirect('/login/')
-=======
-=======
->>>>>>> Juan
+
 def guardarProducto(request):
     
     v_idproducto=request.POST.get('idproducto')
@@ -75,19 +70,19 @@ def guardarProducto(request):
 
     nuevo=Producto()
     nuevo.idProducto=v_idproducto
-    nuevo.nombre=v_nomproducto
+    nuevo.nombreProducto=v_nomproducto
     nuevo.stock=v_stockproducto
     nuevo.precio=v_preproducto
 
     Producto.save(nuevo)
 
-    return redirect('/')
+    return redirect('/inventario/')
     
 def eliminarProducto(request, p_idProducto):
     buscado=Producto.objects.get(idProducto=p_idProducto)
     if(buscado):
         Producto.delete(buscado)
-        return redirect('/')
+        return redirect('/inventario/')
 
 def buscarProducto(request, p_idProducto):
     buscado=Producto.objects.get(idProducto=p_idProducto)
@@ -103,13 +98,9 @@ def guardarProductoModificado(request):
     buscado=Producto.objects.get(idProducto=v_idproducto)
 
     if(buscado):
-        buscado.nombre=v_nomproducto
+        buscado.nombreProducto=v_nomproducto
         buscado.stock=v_stockproducto
         buscado.precio=v_preproducto
 
         Producto.save(buscado)
-        return redirect('/')
-<<<<<<< HEAD
->>>>>>> 2f6b4c37de69e19b2f9d2c3f3db22fa8dbc8c572
-=======
->>>>>>> Juan
+        return redirect('/inventario/')
