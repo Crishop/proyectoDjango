@@ -65,12 +65,14 @@ def guardarProducto(request):
     
     v_idproducto=request.POST.get('idproducto')
     v_nomproducto=request.POST.get('nombre')
+    v_imagen=request.POST.get('imagen')
     v_preproducto=request.POST.get('precio')
     v_stockproducto=request.POST.get('stock')
 
     nuevo=Producto()
     nuevo.idProducto=v_idproducto
     nuevo.nombreProducto=v_nomproducto
+    nuevo.imagen=v_imagen
     nuevo.stock=v_stockproducto
     nuevo.precio=v_preproducto
 
@@ -92,6 +94,7 @@ def buscarProducto(request, p_idProducto):
 def guardarProductoModificado(request):
     v_idproducto=request.POST.get('idproducto')
     v_nomproducto=request.POST.get('nombre')
+    v_imagen=request.POST.get('imagen')
     v_preproducto=request.POST.get('precio')
     v_stockproducto=request.POST.get('stock')
 
@@ -99,6 +102,7 @@ def guardarProductoModificado(request):
 
     if(buscado):
         buscado.nombreProducto=v_nomproducto
+        buscado.imagen=v_imagen
         buscado.stock=v_stockproducto
         buscado.precio=v_preproducto
 

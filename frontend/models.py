@@ -13,11 +13,11 @@ class categoria(models.Model):
 class Producto(models.Model):
     idProducto = models.IntegerField(primary_key=True, verbose_name="ID Producto")
     nombreProducto=models.CharField(max_length=30, verbose_name="Nombre Producto")
-    imagen=models.CharField(max_length=256)
+    imagen=models.CharField(max_length=256, null=True)
     precio=models.IntegerField(verbose_name="Precio Producto")
     stock=models.IntegerField(verbose_name="Stock Producto")
     def __str__(self):
-        return self.nombreProducto
+        return (self.nombreProducto)
 
 class Carrito(models.Model):
     idCarrito=models.IntegerField(primary_key=True, verbose_name="ID Carrito")
@@ -47,4 +47,4 @@ class Usuario(models.Model):
     password = models.CharField(max_length=30)
 
     def __str__(self):
-        return self.email
+        return (self.email)

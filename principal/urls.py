@@ -34,6 +34,7 @@ urlpatterns = [
     path('guardarProducto/', guardarProducto),
     path('guardarProductoCambiado/', guardarProductoModificado),
     path('eliminarProducto/<p_idProducto>', eliminarProducto),
-    path('inventario/modificarProducto/<p_idProducto>', buscarProducto),
+    path('modificarProducto/<p_idProducto>', buscarProducto),
+    path('api/', include('api.urls')),
 
 ]
